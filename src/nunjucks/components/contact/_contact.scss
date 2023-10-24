@@ -1,0 +1,67 @@
+.contact {
+    $this: &;
+    margin: 90px 0 70px;
+    position: relative;
+    z-index: 1;
+
+    &__wrapper {
+        background: radial-gradient(2900.76% 50.13% at 50% 53.89%, rgba(58, 52, 86, 0.95) 0%, #211E2E 100%);
+        border-radius: 90px;
+        box-shadow: 0px 4px 4px 0px rgba(192, 183, 232, 0.01);
+        padding: 50px 40px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        //grid-template-rows: 1fr;
+        grid-row-gap: 40px;
+    }
+
+    &__item {
+        display: flex;
+        margin-right: 40px;
+        position: relative;
+
+        &::before {
+            @include absolute(50%, -40px);
+            @include size(1px, 115px);
+            background: rgba(192, 183, 232, 0.33);
+            content: '';
+            transform: translateY(-50%);
+        }
+
+        &:not(:first-child) {
+            margin-left: 45px;
+        }
+
+        &:last-child {
+            &::before {
+                content: none;
+            }
+        }
+
+        &:not(:first-child) {
+            #{$this}__wrapper-icon {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    &__wrapper-icon {
+        svg {
+            @include size(55px);
+        }
+    }
+
+    &__title {
+        @include font(var(--typo-1), 24px, var(--fw-bold));
+        color: $color-white;
+    }
+
+    &__category,
+    &__link {
+        @include font(var(--typo-1), 14px, var(--fw-normal));
+        color: $color-white;
+    }
+}

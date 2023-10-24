@@ -1,0 +1,42 @@
+// Breakpoints
+$breakpoints: (
+    xsmall: 0,
+    small: 480px,
+    medium: 768px,
+    large: 1280px,
+);
+
+// Primary colors
+$color-1--1: #302c42;
+$color-1--2: #8176af;
+$color-1--3: #c0b7e8;
+
+// Grey colors
+$color-3--1: #a3a3a3;
+
+// Neutral colors
+$color-white: #fff;
+$color-black: #000;
+$color-button: #343045;
+
+:root {
+    // Font family
+    --typo-1: Montserrat, arial, tahoma, sans-serif;
+
+    // Primary color
+    --color-1--1: #{$color-1--1}; // #302c42
+    --color-1--2: #{lighten(saturate(adjust-hue($color-1--1, 1), 6.27), 35.88)}; // #8176af
+    --color-1--3: #{lighten(saturate($color-1--1, 31.58), 59.80)}; // #c0b7e8
+
+    // Font weight
+    --fw-thin: 100;
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
+}
+

@@ -1,0 +1,32 @@
+{%- from  'components/header/header.njk' import Header -%}
+
+{% macro Hero() %}
+    {{ Header() }}
+    <section class="hero">
+        <div class="container">
+            <div class="hero__wrapper">
+                <div class="hero__info">
+                    <h1 class="hero__title">
+                        <span class="is-color">Dive </span>
+                        Into The Depths Of
+                        <span class="is-color"> Virtual Reality</span>
+                    </h1>
+                    <p class="hero__category category">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        nisl tincidunt eget. Lectus mauris eros in vitae .
+                    </p>
+                    <div class="hero__button">
+                        <a href="#" class="btn is-large">Build your world</a>
+                        <span aria-hidden="true" class="hero__icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="hero__picture">
+                    <img src="../../../img/hero.png" alt="hero-picture">
+                </div>
+            </div>
+        </div>
+    </section>
+{% endmacro %}

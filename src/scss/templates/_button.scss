@@ -1,0 +1,36 @@
+.btn {
+    @include font(var(--typo-1), 12px, var(--fw-bold));
+    @include size(155px, 48px);
+    @include trs;
+    align-items: center;
+    background: linear-gradient(90deg, var(--color-1--2) 0%, var(--color-1--3) 100%);
+    border: 2px solid linear-gradient(90deg, var(--color-1--2) 0%, var(--color-1--3) 100%);
+    border-radius: 40px;
+    color: $color-button;
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include on-event {
+        background: var(--color-1--1);
+        border: 2px solid $color-white;
+        color: $color-white;
+    }
+
+    &.is-primary {
+        background: var(--color-1--1);
+        border: 2px solid $color-white;
+        color: $color-white;
+
+        @include on-event {
+            background: $color-white;
+            color: $color-button;
+        }
+    }
+
+    &.is-large {
+        width: 215px;
+    }
+}

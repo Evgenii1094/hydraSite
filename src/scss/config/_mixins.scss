@@ -1,0 +1,89 @@
+// Set font styles
+// @param {string|list} $params - list of font params font-family, font-size, font-weight, font-style
+@mixin font($params...) {
+    @if length($params) > 0 {
+        $params: if(length($params) == 1, nth($params, 1), $params);
+        $props: (font-family, font-size, font-weight, font-style);
+
+        @for $index from 1 through length($params) {
+            #{nth($props, $index)}: nth($params, $index);
+        }
+    }
+}
+
+// Add styles for :hover/:focus state
+@mixin on-event {
+    &:hover,
+    &:focus,
+    &:focus-within {
+        @content;
+    }
+}
+
+// Set width and height for element
+@mixin size($width, $height: $width) {
+    height: $height;
+    width: $width;
+}
+
+// Set transition for element with settings
+@mixin trs($prop: all, $duration: 250ms, $easing: ease-in-out, $delay: 0ms) {
+    transition: $prop $duration $easing $delay;
+}
+
+// Set absolute position with settings
+@mixin absolute($params...) {
+    position: absolute;
+
+    @if length($params) > 0 {
+        $params: if(length($params) == 1, nth($params, 1), $params);
+        $props: (top, right, bottom, left);
+
+        @for $index from 1 through length($params) {
+            #{nth($props, $index)}: nth($params, $index);
+        }
+    }
+}
+
+// Set fixed position with settings
+@mixin fixed($params...) {
+    position: fixed;
+
+    @if length($params) > 0 {
+        $params: if(length($params) == 1, nth($params, 1), $params);
+        $props: (top, right, bottom, left);
+
+        @for $index from 1 through length($params) {
+            #{nth($props, $index)}: nth($params, $index);
+        }
+    }
+}
+
+// Set relative position with settings
+@mixin relative($params...) {
+    position: relative;
+
+    @if length($params) > 0 {
+        $params: if(length($params) == 1, nth($params, 1), $params);
+        $props: (top, right, bottom, left);
+
+        @for $index from 1 through length($params) {
+            #{nth($props, $index)}: nth($params, $index);
+        }
+    }
+}
+
+// Reset position to static
+@mixin reset-position {
+    bottom: auto;
+    left: auto;
+    position: static;
+    right: auto;
+    top: auto;
+}
+
+// Center element inside block (absolute position)
+@mixin abs-center {
+    @include absolute(50%, null, null, 50%);
+    transform: translate(-50%, -50%);
+}

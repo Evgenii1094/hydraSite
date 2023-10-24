@@ -1,0 +1,12 @@
+.paragraph {
+    @include font(var(--typo-1), 16px, var(--fw-normal));
+    color: $color-white;
+
+    @include breakpoint(medium down) {
+        font-size: 1.4rem;
+    }
+
+    @include breakpoint(small down) {
+        font-size: 1.2rem;
+    }
+}

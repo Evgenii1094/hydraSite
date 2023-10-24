@@ -1,0 +1,77 @@
+.hero {
+    position: relative;
+
+    &::before {
+        @include absolute(0, null, null, 0);
+        @include size(248px, 560px);
+        background: {
+            image: url("../../../img/hero-decor.svg");
+            repeat: no-repeat;
+        };
+        content: '';
+    }
+
+    &__wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        max-width: 460px;
+    }
+
+    &__title {
+        @include font(var(--typo-1), 40px, var(--fw-bold));
+        color: $color-white;
+        line-height: 1.2;
+        margin-bottom: 35px;
+
+        .is-color {
+            background: linear-gradient(269deg, var(--color-1--3) -3.72%, var(--color-1--2) 82.17%);
+            font-size: 46px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &__button {
+        align-items: center;
+        display: flex;
+        margin-top: 65px;
+    }
+
+    &__icon {
+        font-size: 50px;
+        margin-left: 50px;
+    }
+
+    &__picture {
+        position: relative;
+
+        &::after {
+            @include absolute(-260px, -90px, null, null);
+            @include size(735px, 845px);
+            background: {
+                image: url("../../../img/hero-picture-decor.svg");
+                repeat: no-repeat;
+            };
+            content: '';
+        }
+
+        &::before {
+            @include absolute(50%, null, null, 50%);
+            @include size(525px, 458px);
+            background-color: rgba($color-black, 0.25);
+            border-radius: 100px 100px 100px 240px;
+            content: '';
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            border-radius: 100px 100px 100px 240px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}

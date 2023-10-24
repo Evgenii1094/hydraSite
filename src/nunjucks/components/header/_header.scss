@@ -1,0 +1,47 @@
+.header {
+    margin: 50px 0 90px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+
+    &__item {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        width: 20%;
+
+        img {
+            @include size(195px, 100%);
+        }
+    }
+
+    &__nav {
+        display: flex;
+        margin: 0 120px;
+    }
+
+    &__nav-item {
+        margin-right: 40px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__nav-link {
+        @include font(var(--typo-1), 12px, var(--fw-bold));
+        color: $color-white;
+        text-transform: uppercase;
+    }
+
+    &__btn {
+        margin-right: 38px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

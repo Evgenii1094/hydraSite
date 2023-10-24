@@ -1,0 +1,5 @@
+.category {
+    @include font(var(--typo-1), 16px, var(--fw-normal));
+    color: $color-white;
+    line-height: 1.65;
+}

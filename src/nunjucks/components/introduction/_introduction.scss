@@ -1,0 +1,14 @@
+.introduction {
+    margin: 70px 0 100px;
+
+    .container {
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__category {
+        margin-top: 20px;
+        width: 650px;
+    }
+}

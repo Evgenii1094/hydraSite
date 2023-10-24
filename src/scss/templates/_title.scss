@@ -1,0 +1,29 @@
+.title {
+    align-items: flex-end;
+    display: flex;
+
+    &__text {
+        @include font(var(--typo-1), 36px, var(--fw-bold));
+        color: $color-white;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+        text-transform: uppercase;
+
+        @include breakpoint(medium down) {
+            font-size: 30px;
+        }
+
+        @include breakpoint(small down) {
+            font-size: 26px;
+        }
+    }
+
+    &__text-second {
+        font-weight: var(--fw-light);
+    }
+
+    &__icon {
+        transform: translate(-20px, 35px);
+    }
+}

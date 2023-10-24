@@ -1,0 +1,19 @@
+.build {
+    margin: 100px 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .title {
+        &__icon {
+            transform: translate(20px, 35px);
+        }
+    }
+
+    &__category {
+        margin-top: 20px;
+        width: 650px;
+    }
+}

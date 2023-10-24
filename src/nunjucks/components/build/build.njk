@@ -1,0 +1,18 @@
+{%- from  'templates/title.njk' import Title -%}
+
+{% macro Build() %}
+    <section class="build">
+        <div class="container">
+            {{ Title(
+                title = 'Why build',
+                titleSecond = 'with hydra?'
+            ) }}
+            <p class="build__category category">
+                Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat
+                nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo
+                quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare
+                lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.
+            </p>
+        </div>
+    </section>
+{% endmacro %}
