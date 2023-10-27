@@ -3,6 +3,12 @@
 {%- from './components/introduction/introduction.njk' import Introduction -%}
 {%- from './components/about/about.njk' import About -%}
 {%- from './components/build/build.njk' import Build -%}
+{%- from './components/card/card.njk' import Card -%}
+{%- from './components/technology/technology.njk' import Technology -%}
+{%- from './components/brand/brand.njk' import Brand -%}
+{%- from './components/number/number.njk' import Number -%}
+{%- from './components/form/form.njk' import Form -%}
+{%- from './components/footer/footer.njk' import Footer -%}
 
 {% set pageConfig = {
     title: 'Landing OSI'
@@ -16,4 +22,14 @@
     {{ Introduction() }}
     {{ About() }}
     {{ Build() }}
+    {{ Card() }}
+    {{ Technology() }}
+    {{ Brand() }}
+    {{ Build(
+        whyBuild = false,
+        modifier = 'is-second-build'
+    ) }}
+    {{ Number() }}
+    {{ Form() }}
+    {{ Footer() }}
 {% endblock %}

@@ -1,0 +1,102 @@
+.footer {
+    margin: 130px 0 60px;
+    position: relative;
+
+    &::before {
+        @include absolute(-320px, null, null, 0);
+        @include size(100%, 555px);
+        background: {
+            image: url("../../../img/footer-decor-bg.svg");
+            repeat: no-repeat;
+        };
+        content: '';
+        z-index: -1;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        &:first-child {
+            padding-bottom: 80px;
+            margin-bottom: 50px;
+
+            &::before {
+                @include absolute(null, null, 0, 50%);
+                @include size(100%, 4px);
+                background: {
+                    image: url("../../../img/footer-decor.svg");
+                    repeat: no-repeat;
+                };
+                content: '';
+                transform: translateX(-50%);
+            }
+        }
+
+        &:last-child {
+            justify-content: center;
+        }
+    }
+
+    &__column {
+        &:not(&:last-child) {
+            padding-right: 100px;
+            position: relative;
+
+            &::before {
+                @include absolute(0, 0);
+                @include size(6px, 200px);
+                background: {
+                    image: url("../../../img/decor-vertical.svg");
+                    repeat: no-repeat;
+                };
+                content: '';
+            }
+        }
+    }
+
+    &__nav {
+        margin-bottom: 20px;
+    }
+
+    &__link,
+    &__social-title {
+        @include font(var(--typo-1), 16px, var(--fw-bold));
+        color: $color-white;
+        text-transform: uppercase;
+    }
+
+    &__social {
+        margin-bottom: 50px;
+    }
+
+    &__social-title {
+        margin-bottom: 40px;
+    }
+
+    &__social-link {
+        @include size(32px);
+        align-items: center;
+        background-color: var(--color-1--3);
+        border-radius: 50%;
+        color: $color-button;
+        display: inline-flex;
+        justify-content: center;
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__copyright {
+        @include font(var(--typo-1), 14px, var(--fw-bold));
+        color: $color-white;
+    }
+}

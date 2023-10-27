@@ -2,9 +2,10 @@
     className = '',
     title = title,
     titleSecond = titleSecond,
-    svgIcon = true
+    svgIcon = true,
+    modifier = modifier
 ) %}
-    <div class="title">
+    <div class="title {{ modifier }}">
         <h2 class="title__text {{ className }}">
             {{ title }}
             <span class="title__text-second">

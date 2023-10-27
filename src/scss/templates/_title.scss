@@ -1,6 +1,31 @@
 .title {
+    $this: &;
+
     align-items: flex-end;
     display: flex;
+
+    &.is-center {
+        justify-content: center;
+        text-align: center;
+
+        #{$this}__text-second {
+            margin-top: 30px;
+            padding-top: 30px;
+            position: relative;
+            text-transform: capitalize;
+
+            &::before {
+                @include absolute(0, null, null, 50%);
+                @include size(415px, 1px);
+                background: {
+                    image: url("../../img/title-under-decor.svg");
+                    repeat: no-repeat;
+                };
+                content: '';
+                transform: translateX(-50%);
+            }
+        }
+    }
 
     &__text {
         @include font(var(--typo-1), 36px, var(--fw-bold));

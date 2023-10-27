@@ -1,0 +1,62 @@
+.card {
+    margin: 100px 0;
+    position: relative;
+
+    &::before {
+        @include absolute(50px, null, null, 0);
+        @include size(100%, 825px);
+        background: {
+            image: url('../../../img/card-decor.svg');
+            repeat: no-repeat;
+        };
+        content: '';
+        z-index: -1;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0 10px;
+    }
+
+    &__wrapper {
+        align-items: center;
+        border-radius: 40px;
+        background: radial-gradient(50% 50% at 50% 50%, #433D60 0%, #211E2E 100%);
+        display: flex;
+        flex-direction: column;
+        padding: 30px 25px 40px;
+    }
+
+    &__picture {
+        @include size(190px);
+        border: 12px solid rgba(14, 14, 14, 0.32);
+        border-radius: 50%;
+        margin-bottom: 20px;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        position: relative;
+        text-transform: uppercase;
+
+        &::before {
+            @include absolute(null, null, 0, 50%);
+            @include size(155px, 1px);
+            background: rgba(192, 183, 232, 0.33);
+            content: '';
+            transform: translateX(-50%);
+        }
+    }
+
+    &__category {
+        @include font(var(--typo-1), 12px, var(--fw-normal));
+        color: $color-white;
+        margin-bottom: 35px;
+    }
+}

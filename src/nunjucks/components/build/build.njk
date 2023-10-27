@@ -1,12 +1,22 @@
 {%- from  'templates/title.njk' import Title -%}
 
-{% macro Build() %}
-    <section class="build">
+{% macro Build(
+    whyBuild = true,
+    modifier = modifier
+) %}
+    <section class="build {{ modifier }}">
         <div class="container">
-            {{ Title(
-                title = 'Why build',
-                titleSecond = 'with hydra?'
-            ) }}
+            {% if whyBuild %}
+                {{ Title(
+                    title = 'Why build',
+                    titleSecond = 'with hydra?'
+                ) }}
+            {% else %}
+                {{ Title(
+                    title = 'How we build',
+                    titleSecond = 'with hydra VR?'
+                ) }}
+            {% endif %}
             <p class="build__category category">
                 Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat
                 nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo
