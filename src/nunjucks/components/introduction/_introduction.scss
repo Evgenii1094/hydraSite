@@ -1,6 +1,10 @@
 .introduction {
     margin: 70px 0 100px;
 
+    @include breakpoint(medium down) {
+        margin: 60px 0;
+    }
+
     .container {
         align-items: flex-start;
         display: flex;
@@ -10,5 +14,9 @@
     &__category {
         margin-top: 20px;
         width: 650px;
+
+        @include breakpoint(medium down) {
+            margin-top: 35px;
+        }
     }
 }

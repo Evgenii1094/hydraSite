@@ -1,13 +1,21 @@
 .build {
     margin: 100px 0;
 
+    @include breakpoint(medium down) {
+        margin: 70px 0;
+    }
+
     &.is-second-build {
         margin: 50px 0;
     }
 
-    .container {
+    &__container {
         display: flex;
         justify-content: space-between;
+
+        @include breakpoint(medium down) {
+            align-items: baseline;
+        }
     }
 
     .title {
@@ -19,5 +27,10 @@
     &__category {
         margin-top: 20px;
         width: 650px;
+
+        @include breakpoint(medium down) {
+            margin: 0 0 0 30px;
+            transform: translateY(-10px);
+        }
     }
 }

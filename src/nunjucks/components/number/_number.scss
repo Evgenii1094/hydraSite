@@ -2,6 +2,10 @@
     margin: 100px 0;
     position: relative;
 
+    @include breakpoint(medium down) {
+        margin: 100px 0 70px;
+    }
+
     &::before {
         @include absolute(-15px, null, null, 0);
         @include size(100%, 170px);
@@ -10,6 +14,11 @@
             repeat: no-repeat;
         };
         content: '';
+
+        @include breakpoint(medium only) {
+            background-size: 110% 80%;
+            top: -10px;
+        }
     }
 
     &__list {
@@ -22,6 +31,11 @@
         display: flex;
         flex-direction: column;
         width: 260px;
+
+        @include breakpoint(medium down) {
+            margin: 0 8px;
+            width: 25%;
+        }
     }
 
     &__count {
@@ -35,6 +49,11 @@
         justify-content: center;
         position: relative;
 
+        @include breakpoint(medium only) {
+            @include size(120px);
+            font-size: 55px;
+        }
+
         &::before {
             @include absolute(50%, null, null, 50%);
             @include size(200px);
@@ -42,6 +61,16 @@
             border-radius: 50%;
             content: '';
             transform: translate(-50%, -50%);
+
+            @include breakpoint(medium down) {
+                @include size(160px);
+            }
+        }
+    }
+
+    &__title {
+        @include breakpoint(medium only) {
+            font-size: 20px;
         }
     }
 
@@ -50,9 +79,18 @@
         display: flex;
         margin-top: 45px;
 
+        @include breakpoint(medium only) {
+            align-items: flex-start;
+        }
+
         svg {
             flex-shrink: 0;
             transform: translateY(-20px);
+
+            @include breakpoint(medium only) {
+                @include size(55px);
+                margin-top: 10px;
+            }
         }
     }
 }

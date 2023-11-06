@@ -6,4 +6,10 @@
         display: flex;
         justify-content: space-between;
     }
+
+    &__picture {
+        @include breakpoint(medium down) {
+            margin: 0 15px;
+        }
+    }
 }

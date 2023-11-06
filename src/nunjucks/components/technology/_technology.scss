@@ -1,18 +1,37 @@
 .technology {
     margin: 100px 0 50px;
 
+    @include breakpoint(medium down) {
+        margin: 70px 0 50px;
+    }
+
+    .title {
+        @include breakpoint(medium down) {
+            @include absolute(50%, null, null, 50%);
+            transform: translate(-50%, -50%);
+        }
+    }
+
     &__container {
         align-items: center;
         display: flex;
         justify-content: center;
         height: 305px;
         position: relative;
+
+        @include breakpoint(medium down) {
+            height: auto;
+        }
     }
 
-    &__picture {
+    picture {
         @include absolute(0, null, null, 0);
         border-radius: 160px;
         z-index: -1;
+
+        @include breakpoint(medium down) {
+            position: relative;
+        }
 
         img {
             border-radius: 160px;
@@ -34,6 +53,11 @@
         display: flex;
         justify-content: center;
         transform: translateX(-50%);
+
+        @include breakpoint(medium down) {
+            @include size(80px);
+            border-width: 10px;
+        }
     }
 
     &__btn-icon {

@@ -2,6 +2,10 @@
     margin: 100px 0;
     position: relative;
 
+    @include breakpoint(medium down) {
+        margin: 70px 0;
+    }
+
     &::before {
         @include absolute(50px, null, null, 0);
         @include size(100%, 825px);
@@ -17,6 +21,12 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 0 10px;
+
+        @include breakpoint(medium down) {
+            grid-gap: 20px;
+            grid-template-columns: repeat(auto-fill, 310px);
+            justify-content: center;
+        }
     }
 
     &__wrapper {

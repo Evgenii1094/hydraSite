@@ -4,6 +4,10 @@
     align-items: flex-end;
     display: flex;
 
+    @include breakpoint(medium down) {
+        position: relative;
+    }
+
     &.is-center {
         justify-content: center;
         text-align: center;
@@ -37,6 +41,7 @@
 
         @include breakpoint(medium down) {
             font-size: 30px;
+            min-width: 220px;
         }
 
         @include breakpoint(small down) {
@@ -50,5 +55,11 @@
 
     &__icon {
         transform: translate(-20px, 35px);
+
+        svg {
+            @include breakpoint(medium down) {
+                width: 150px;
+            }
+        }
     }
 }
